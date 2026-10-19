@@ -71,49 +71,56 @@ const qs=[
 ['What does netiquette mean?',['Respectful behavior online','A type of password','A video app','A download'],0,'Netiquette means using polite and respectful behavior online.'],['You get an unexpected email with a strange link. What is safest?',['Click it quickly','Forward it to everyone','Avoid clicking and verify it','Reply with your password'],2,'Verify unexpected messages before clicking links.'],['What is phishing?',['Organizing email folders','A trick to get information or clicks','A video call feature','An emoji'],1,'Phishing tries to deceive people into unsafe actions.'],['What is adware?',['Software displaying unwanted ads','A strong password','An email greeting','A location tag'],0,'Adware is associated with unwanted advertisements.'],['What is your digital footprint?',['Your shoe print','Only deleted messages','The trail of information you leave online','Your screen size'],2,'Online activity can contribute to your digital footprint.'],['Repeated hurtful comments about a classmate online are an example of…',['Netiquette','Cyberbullying','Geotagging','Proofreading'],1,'Cyberbullying is hurtful behavior using digital tools.'],['What can geotagging add to a post?',['A password','A subject line','Location information','An email signature'],2,'Geotagging can reveal where a photo or post was shared from.'],['“CU L8R” is an example of…',['A formal signature','A textism','Malware','A geotag'],1,'Textisms are shortened or informal digital language.'],['Which is nonverbal communication?',['A subject line','A download','A facial expression or gesture','A password reset'],2,'Facial expressions and gestures are nonverbal cues.'],['Which is best for a professional email?',['Emoji only','Clear subject, greeting, message, closing','Attachment only','All caps'],1,'Professional emails are clear and organized.'],['A pop-up asks you to install an unfamiliar update. What should you do?',['Install it now','Ignore all safety checks','Avoid clicking and use a trusted update method','Share it with everyone'],2,'Use trusted sources for software updates.'],['What is a good response to cyberbullying?',['Join in','Share the post','Block/report and tell a trusted adult','Repost it'],2,'Do not amplify hurtful content; report it and get help.'],['Before a video call with an instructor, you should…',['Confirm time/link and test your device','Wait until the last second','Keep your mic loud','Avoid preparing'],0,'Confirm details and prepare your setup and questions.'],['Why is 12345678 a weak password?',['It is too long','It is easy to guess','It has too many symbols','It is an email subject'],1,'Common sequences are easy to guess.'],['What should you do before sending an email?',['Skip the subject','Proofread and check attachments','Use all caps','Send without reading'],1,'Proofreading helps make a message clear and complete.'],['Which message is better for a teacher?',['yo answer me rn','hey!!!','Hello, I have a question about the Unit 2 assignment.','Emoji only'],2,'Use a polite greeting and clearly explain your question.'],['A stranger online asks for your home address. You should…',['Send it','Ask their address first','Not share it and tell a trusted adult if needed','Post it publicly'],2,'Keep personal information private.'],['What does downloading do?',['Copies a file/program from internet to your device','Makes email polite','Blocks a person','Adds an emoji'],0,'A download transfers a file to your device.'],['How can you disagree respectfully online?',['Insult the person','Explain your view respectfully','Use all caps','Encourage others to pile on'],1,'Focus on the idea rather than attacking a person.'],['Why choose the right communication method?',['Every message should be a text','It fits the audience and situation','It removes the need to proofread','It replaces course directions'],1,'Different situations call for different methods.']];let qi=0,score=0,done=false;const $=id=>document.getElementById(id);
 function drawDiningArt(){
 const revealed=Math.min(score,20);
-const nameInput=$('studentNameTop');
-const studentName=nameInput?nameInput.value.trim():'';
+const studentName=$('studentNameTop').value.trim();
 $('diningTitle').textContent=studentName?studentName+"'s Formal Table Setting":'Your Formal Table Setting';
-const show=n=>revealed>=n?'':'opacity="0.035"';
+const show=n=>revealed>=n?'':'opacity="0.025"';
 const labels=['Ivory placemat','Gold charger plate','Dinner plate','Inner plate rim','Burgundy napkin','Gold napkin ring','Dinner fork','Salad fork','Dinner knife','Soup spoon','Water glass','Second glass','Bread plate','Butter knife','Place card','Greenery','Flower centerpiece','Gold plate detail','Napkin accent','Table runner'];
-const rect=(x,y,w,h,fill,stroke='#9b8b70')=>'<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" fill="'+fill+'" stroke="'+stroke+'" stroke-width="1"/>';
-$('diningArt').innerHTML=`<svg viewBox="0 0 420 290" role="img" aria-label="Pixel art formal dining table setting with clearly recognizable plates, cutlery, napkin, bread plate, and glasses" shape-rendering="crispEdges" style="width:100%;max-width:440px;height:auto;display:block;margin:0 auto">
-<rect x="5" y="5" width="410" height="280" rx="10" fill="#e8decc" stroke="#bda982" stroke-width="3"/>
-<rect x="15" y="15" width="390" height="260" fill="#f8f2e6" stroke="#d1c1a5" stroke-width="2"/>
-<g ${show(1)}>${rect(72,32,276,224,'#e4d3b5','#c0a77d')}${rect(80,40,260,208,'#f2e7d4','#d5c09b')}</g>
-<!-- pixel-stepped charger -->
-<g ${show(2)} fill="#c8a96b" stroke="#a98543" stroke-width="2">
-<rect x="168" y="65" width="84" height="8"/><rect x="152" y="73" width="116" height="8"/><rect x="144" y="81" width="132" height="8"/><rect x="136" y="89" width="148" height="8"/><rect x="128" y="97" width="164" height="8"/><rect x="128" y="105" width="164" height="80"/><rect x="136" y="185" width="148" height="8"/><rect x="144" y="193" width="132" height="8"/><rect x="152" y="201" width="116" height="8"/><rect x="168" y="209" width="84" height="8"/>
+$('diningArt').innerHTML=`<svg viewBox="0 0 460 340" role="img" aria-label="Elegant formal dining table setting with layered plates, folded burgundy napkin, silverware, glasses, bread plate and centerpiece" style="width:100%;max-width:460px;height:auto;display:block;margin:0 auto">
+<defs>
+ <linearGradient id="linen" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fffaf0"/><stop offset="1" stop-color="#e8d9bd"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5dfa0"/><stop offset=".48" stop-color="#c39a4d"/><stop offset="1" stop-color="#f0d48b"/></linearGradient>
+ <linearGradient id="porcelain" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset=".75" stop-color="#f2eee5"/><stop offset="1" stop-color="#ddd5c7"/></linearGradient>
+ <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#b9d9df" stop-opacity=".35"/><stop offset=".45" stop-color="#fff" stop-opacity=".82"/><stop offset="1" stop-color="#8ab4bd" stop-opacity=".55"/></linearGradient>
+ <linearGradient id="napkin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9c4052"/><stop offset=".5" stop-color="#6e2938"/><stop offset="1" stop-color="#4d1b29"/></linearGradient>
+ <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#5a4528" flood-opacity=".2"/></filter>
+</defs>
+<rect x="5" y="5" width="450" height="330" rx="14" fill="#e9deca" stroke="#b89b68" stroke-width="3"/>
+<rect x="15" y="15" width="430" height="310" rx="10" fill="url(#linen)" stroke="#d2bd96" stroke-width="1.5"/>
+<path d="M24 28 H436 M24 312 H436" stroke="#c6a96d" stroke-width="1.5" stroke-dasharray="3 5"/>
+<g ${show(1)} filter="url(#softShadow)">
+ <rect x="57" y="45" width="346" height="252" rx="7" fill="#e2cfaa" stroke="#c4a572" stroke-width="2"/>
+ <rect x="66" y="54" width="328" height="234" rx="5" fill="#f3e7d2" stroke="#fff8e8" stroke-width="2"/>
+ <path d="M76 64 H384 M76 278 H384" stroke="#d2bc91" stroke-width="1"/>
 </g>
-<!-- white dinner plate -->
-<g ${show(3)} fill="#fffdf8" stroke="#c8c1b4" stroke-width="2">
-<rect x="168" y="81" width="84" height="8"/><rect x="152" y="89" width="116" height="8"/><rect x="144" y="97" width="132" height="8"/><rect x="136" y="105" width="148" height="72"/><rect x="144" y="177" width="132" height="8"/><rect x="152" y="185" width="116" height="8"/><rect x="168" y="193" width="84" height="8"/>
-</g>
-<g ${show(4)} fill="none" stroke="#d7c6a4" stroke-width="2"><rect x="160" y="97" width="100" height="8"/><rect x="152" y="105" width="116" height="72"/><rect x="160" y="177" width="100" height="8"/></g>
-<!-- folded napkin, a clear burgundy diamond-fold -->
-<g ${show(5)}><path d="M176 116 L210 98 L244 116 L236 166 L210 181 L184 166Z" fill="#8d253b" stroke="#6d192c" stroke-width="2"/><path d="M180 117 L210 139 L240 117 M210 139 L210 174" fill="none" stroke="#dba6ac" stroke-width="3"/></g>
-<g ${show(6)}><rect x="194" y="136" width="32" height="8" fill="#d8bd7e" stroke="#a98543" stroke-width="2"/><rect x="198" y="132" width="24" height="16" fill="none" stroke="#f3dfac" stroke-width="2"/></g>
-<!-- forks: prongs and long handles -->
-<g ${show(7)} fill="#aeb4b6" stroke="#858d91" stroke-width="2"><rect x="98" y="72" width="5" height="22"/><rect x="106" y="72" width="5" height="22"/><rect x="114" y="72" width="5" height="22"/><rect x="122" y="72" width="5" height="22"/><rect x="98" y="90" width="29" height="9"/><rect x="109" y="99" width="7" height="94"/></g>
-<g ${show(8)} fill="#c5ad70" stroke="#9b8249" stroke-width="2"><rect x="78" y="91" width="5" height="19"/><rect x="86" y="91" width="5" height="19"/><rect x="94" y="91" width="5" height="19"/><rect x="78" y="106" width="21" height="8"/><rect x="85" y="114" width="7" height="79"/></g>
-<!-- knife -->
-<g ${show(9)} fill="#cbd2d2" stroke="#879296" stroke-width="2"><path d="M302 70 L318 83 L314 112 L310 112 L310 193 L302 193Z"/></g>
-<!-- soup spoon -->
-<g ${show(10)} fill="#cbd2d2" stroke="#879296" stroke-width="2"><rect x="330" y="100" width="9" height="92"/><rect x="322" y="78" width="25" height="25"/><rect x="326" y="73" width="17" height="8"/></g>
-<!-- glasses, pixel cup silhouettes -->
-<g ${show(11)} fill="#d8eaeb" fill-opacity=".9" stroke="#83a8ad" stroke-width="2"><rect x="267" y="42" width="25" height="6"/><rect x="263" y="48" width="33" height="25"/><rect x="267" y="73" width="25" height="6"/><rect x="276" y="79" width="7" height="19"/><rect x="269" y="98" width="21" height="5"/></g>
-<g ${show(12)} fill="#d8eaeb" fill-opacity=".9" stroke="#83a8ad" stroke-width="2"><rect x="310" y="42" width="25" height="6"/><rect x="306" y="48" width="33" height="22"/><rect x="310" y="70" width="25" height="6"/><rect x="319" y="76" width="7" height="17"/><rect x="312" y="93" width="21" height="5"/></g>
-<!-- bread plate -->
-<g ${show(13)} fill="#fffdf8" stroke="#c8c1b4" stroke-width="2"><rect x="98" y="35" width="32" height="6"/><rect x="90" y="41" width="48" height="6"/><rect x="86" y="47" width="56" height="18"/><rect x="90" y="65" width="48" height="6"/><rect x="98" y="71" width="32" height="5"/></g>
-<g ${show(14)} fill="#cbd2d2" stroke="#879296" stroke-width="2"><rect x="144" y="42" width="7" height="33"/><rect x="140" y="37" width="11" height="12"/></g>
-<!-- place card -->
-<g ${show(15)}><rect x="175" y="226" width="70" height="16" fill="#fffdf7" stroke="#bda982" stroke-width="2"/><path d="M183 232 H237 M183 237 H225" stroke="#b89b68" stroke-width="2"/></g>
-<!-- small greenery and flower centerpiece -->
-<g ${show(16)} fill="none" stroke="#718b61" stroke-width="4"><path d="M210 36 V23 M210 31 L194 23 M210 31 L226 21"/></g>
-<g ${show(17)}><rect x="202" y="15" width="8" height="8" fill="#c78591"/><rect x="210" y="15" width="8" height="8" fill="#b66a79"/><rect x="206" y="23" width="8" height="8" fill="#d8b86d"/><rect x="198" y="23" width="8" height="8" fill="#d8a4a5"/></g>
-<g ${show(18)} fill="none" stroke="#f3dfac" stroke-width="2"><rect x="144" y="97" width="132" height="8"/><rect x="136" y="105" width="8" height="72"/><rect x="276" y="105" width="8" height="72"/></g>
-<g ${show(19)} fill="#8d253b" stroke="#6d192c" stroke-width="2"><rect x="82" y="204" width="18" height="18"/><rect x="320" y="204" width="18" height="18"/></g>
-<g ${show(20)} fill="#b28a4c"><rect x="91" y="249" width="238" height="4"/><rect x="199" y="253" width="8" height="5"/><rect x="207" y="258" width="8" height="5"/><rect x="215" y="253" width="8" height="5"/></g>
+<!-- Charger and layered porcelain plates -->
+<g ${show(2)} filter="url(#softShadow)"><ellipse cx="228" cy="181" rx="91" ry="96" fill="url(#gold)" stroke="#a9823e" stroke-width="2.5"/><ellipse cx="228" cy="181" rx="83" ry="88" fill="none" stroke="#f7e6b5" stroke-width="2"/></g>
+<g ${show(3)} filter="url(#softShadow)"><ellipse cx="228" cy="177" rx="78" ry="82" fill="url(#porcelain)" stroke="#c8c0b2" stroke-width="2"/><ellipse cx="228" cy="177" rx="68" ry="72" fill="none" stroke="#e5d8c2" stroke-width="1.5"/></g>
+<g ${show(4)}><ellipse cx="228" cy="177" rx="60" ry="64" fill="none" stroke="#c7a45f" stroke-width="2"/><ellipse cx="228" cy="177" rx="56" ry="60" fill="none" stroke="#f5e2ae" stroke-width="1"/></g>
+<!-- Folded cloth napkin and ring -->
+<g ${show(5)} filter="url(#softShadow)"><path d="M185 129 Q207 116 228 129 Q249 116 271 129 L258 192 Q243 215 228 227 Q213 215 198 192Z" fill="url(#napkin)" stroke="#5d2030" stroke-width="1.5"/><path d="M190 133 Q210 146 228 163 Q246 146 266 133 M198 191 Q215 183 228 163 Q241 183 258 191" fill="none" stroke="#c77986" stroke-width="2" opacity=".8"/><path d="M202 143 L228 164 L254 143" fill="none" stroke="#a95868" stroke-width="1.5"/></g>
+<g ${show(6)}><rect x="207" y="158" width="42" height="13" rx="4" fill="url(#gold)" stroke="#9c7433" stroke-width="1.5"/><rect x="213" y="161" width="30" height="7" rx="2" fill="none" stroke="#f9e9b6" stroke-width="1.5"/></g>
+<!-- Cutlery on left -->
+<g ${show(7)} stroke-linecap="round" stroke-linejoin="round" filter="url(#softShadow)"><path d="M104 117 V226" stroke="#8d9698" stroke-width="7"/><path d="M104 117 V226" stroke="#e2e5e3" stroke-width="3"/><path d="M88 76 V111 M96 76 V111 M104 76 V111 M112 76 V111 M120 76 V111" stroke="#aeb7b7" stroke-width="4"/><path d="M88 108 Q104 119 120 108" fill="none" stroke="#aeb7b7" stroke-width="4"/></g>
+<g ${show(8)} stroke-linecap="round" stroke-linejoin="round" filter="url(#softShadow)"><path d="M133 119 V226" stroke="#c09a50" stroke-width="6"/><path d="M133 119 V226" stroke="#f6df9e" stroke-width="2"/><path d="M122 82 V108 M129 82 V108 M136 82 V108 M143 82 V108" stroke="#c09a50" stroke-width="3.5"/><path d="M122 106 Q133 114 143 106" fill="none" stroke="#c09a50" stroke-width="3.5"/></g>
+<!-- Knife and spoon on right -->
+<g ${show(9)} filter="url(#softShadow)"><path d="M319 76 Q333 85 329 112 L326 126 V226" fill="#cbd2d2" stroke="#899496" stroke-width="1.5"/><path d="M324 126 V226" stroke="#f7f8f5" stroke-width="2.5" stroke-linecap="round"/></g>
+<g ${show(10)} filter="url(#softShadow)"><ellipse cx="365" cy="94" rx="12" ry="17" fill="url(#glass)" stroke="#9baeb0" stroke-width="1.5"/><path d="M365 111 V226" stroke="#b4c5c5" stroke-width="7" stroke-linecap="round"/><path d="M365 111 V226" stroke="#f9ffff" stroke-width="2" stroke-linecap="round"/></g>
+<!-- Two elegant stemmed glasses -->
+<g ${show(11)} filter="url(#softShadow)"><path d="M282 42 H321 L317 83 Q314 98 301 101 Q288 98 285 83Z" fill="url(#glass)" stroke="#8eafb4" stroke-width="1.6"/><path d="M301 101 V125 M288 126 H314" fill="none" stroke="#8eafb4" stroke-width="2.5" stroke-linecap="round"/><path d="M291 51 L294 79" stroke="#fff" stroke-width="3" opacity=".8"/></g>
+<g ${show(12)} filter="url(#softShadow)"><path d="M330 49 H357 L354 76 Q352 87 343 89 Q334 87 332 76Z" fill="url(#glass)" stroke="#8eafb4" stroke-width="1.5"/><path d="M343 89 V108 M333 109 H353" fill="none" stroke="#8eafb4" stroke-width="2.2" stroke-linecap="round"/><path d="M337 56 L339 76" stroke="#fff" stroke-width="2.5" opacity=".8"/></g>
+<!-- Bread plate and butter knife -->
+<g ${show(13)} filter="url(#softShadow)"><ellipse cx="112" cy="61" rx="36" ry="25" fill="url(#porcelain)" stroke="#c7bda9" stroke-width="2"/><ellipse cx="112" cy="61" rx="28" ry="18" fill="none" stroke="#d7bd83" stroke-width="1.5"/></g>
+<g ${show(14)}><path d="M145 43 Q153 50 150 59 L147 66 V81" fill="#cbd2d2" stroke="#8f9a9b" stroke-width="1.5" stroke-linecap="round"/></g>
+<!-- Place card -->
+<g ${show(15)} filter="url(#softShadow)"><path d="M178 269 L228 258 L278 269 L278 286 L178 286Z" fill="#fffdf7" stroke="#c3a66e" stroke-width="1.5"/><path d="M192 273 H264 M202 279 H254" stroke="#c4a66d" stroke-width="1.5"/></g>
+<!-- Greenery -->
+<g ${show(16)} stroke="#587a51" stroke-width="3" stroke-linecap="round" fill="#789667"><path d="M228 52 Q204 35 189 42 Q197 61 228 60 Q249 34 268 42 Q258 62 228 60"/><path d="M228 59 Q207 45 202 28 M229 58 Q249 43 253 27" fill="none" stroke-width="2"/></g>
+<!-- Flower centerpiece -->
+<g ${show(17)}><g transform="translate(204 34)"><ellipse cy="-6" rx="5" ry="8" fill="#a63c52"/><ellipse cy="6" rx="5" ry="8" fill="#a63c52"/><ellipse cx="-6" rx="8" ry="5" fill="#8c2d43"/><ellipse cx="6" rx="8" ry="5" fill="#8c2d43"/><circle r="4" fill="#e6bd65"/></g><g transform="translate(252 35)"><ellipse cy="-6" rx="5" ry="8" fill="#fff4d8"/><ellipse cy="6" rx="5" ry="8" fill="#fff4d8"/><ellipse cx="-6" rx="8" ry="5" fill="#f0dfbd"/><ellipse cx="6" rx="8" ry="5" fill="#f0dfbd"/><circle r="4" fill="#d2a14c"/></g><g transform="translate(228 24)"><ellipse cy="-5" rx="4" ry="7" fill="#bd5364"/><ellipse cy="5" rx="4" ry="7" fill="#bd5364"/><ellipse cx="-5" rx="7" ry="4" fill="#9b3149"/><ellipse cx="5" rx="7" ry="4" fill="#9b3149"/><circle r="3.5" fill="#f0cf7b"/></g></g>
+<!-- Gold details and napkin accent -->
+<g ${show(18)} fill="none" stroke="url(#gold)" stroke-width="2"><ellipse cx="228" cy="177" rx="72" ry="76"/><path d="M83 247 H373"/></g>
+<g ${show(19)}><path d="M194 137 Q228 155 262 137" fill="none" stroke="#e5b9b8" stroke-width="2.5"/><circle cx="228" cy="164" r="3" fill="#f6dfaa"/></g>
+<g ${show(20)}><path d="M75 299 H385" stroke="#8d253b" stroke-width="7"/><path d="M75 299 H385" stroke="#d5b36b" stroke-width="1.5" stroke-dasharray="4 5"/></g>
 </svg>`;
 $('diningProgress').textContent=`${revealed} of 20 items revealed`;
 let legend=$('diningLegend');
